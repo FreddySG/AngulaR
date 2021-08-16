@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Guid } from "guid-typescript";
 import { Todo } from 'src/models/todo.model';
+import {JsonService } from './json.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,13 @@ import { Todo } from 'src/models/todo.model';
 })
 export class AppComponent {
   todos: Todo[] = [];
-  
+
+  constructor(public json: JsonService){
+    this.json.getJson('https://demo6193376.mockable.io/todos').subscribe((res: any)=>{
+      console.log(res);
+    });
+  }
+
   onSubmit(form: NgForm){
     let todo = new Todo(Guid.create(),form.value.title, false);
     this.todos.push(todo);
