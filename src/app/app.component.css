@@ -1,8 +1,10 @@
 .container{
+  background: linear-gradient(100deg, rgb(182, 40, 111) 50%, #ac2066 0);
   background-color: #d4fa2b;
   width: 500px;
-  height: 500px;
-  margin: 5px;
+  height: 550px;
+  justify-content: center;
+  align-items: center;
 }
 
 .todo-form{
@@ -16,11 +18,11 @@
   width: 100%;
 }
 
-.todo-list > li{
+.todo-list > li {
   margin-top: 5px;
 }
 
-.todo-list > li{
+.todo-list > li > div{
   display: flex;
   flex-direction: row;
   justify-content:space-between;
